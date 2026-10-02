@@ -3,46 +3,50 @@
 | Parameter | Final value |
 |---|---:|
 | Layout | **10 cells, 4-3-2-1** |
-| Max XY envelope | **184.624 × 162.389 mm** |
-| Print depth / height | **65.0 mm** |
-| Internal hex across flats | **33.0 mm** |
+| Internal hex AF | **33 mm** |
+| Overall Z height/depth | **65 mm** |
 | Hex wall | **2.5 mm** |
 | Rear wall | **2.5 mm** |
-| Corner feature | **3 symmetric through-chevrons** |
-| Chevron max width | **19.36 mm** |
-| Chevron radial height | **16.766 mm** |
-| Inner-V depth | **5.589 mm** |
-| Outer-side angle | **60°** |
-| Inner-V side angle | **30°** |
-| Min ligament to outer/connector geometry | **≈3.002 mm** |
-| Min ligament to hex opening | **≈3.007 mm** |
-| CAD volume | **228.242 cm³** |
-| CAD surface area | **155,235 mm²** |
-| Main STL | **watertight** |
-| STEP | **single solid validated** |
+| Corner feature | **3 through-chevron openings** |
+| Chevron width | **19.36 mm** |
+| Chevron height | **~16.77 mm** |
+| Inner V depth | **~5.59 mm** |
+| Outer angles | **60°** |
+| Inner angles | **30°** |
+| Minimum material thickness in feature area | **~3.0 mm** |
+| CAD volume | **~228.24157 cm³** |
+| Outer envelope | **Same as R1** |
 
 ## Connector
 
-R2 keeps the corrected R1 connector geometry exactly:
+R2 uses exactly the same locked connector geometry as R1.
 
-- Male neck/head: **5.2 / 8.2 mm**
-- Male depth: **2.5 mm**
-- Female mouth/inner: **5.7 / 8.7 mm**
-- Female depth: **2.7 mm**
+- Male neck: **5.20 mm**
+- Male head: **8.20 mm**
+- Male depth: **2.50 mm**
+- Female mouth: **5.70 mm**
+- Female inner width: **8.70 mm**
+- Female depth: **2.70 mm**
 - Side clearance: **0.25 mm per side**
+- Total lateral difference: **0.50 mm**
 - Depth clearance: **0.20 mm**
 
-The external contour comparison against frozen R1 reports **0.0 mm² symmetric-difference area** and **0.0 mm Hausdorff distance**.
+Canonical specification: [../CONNECTOR_SPEC.md](../CONNECTOR_SPEC.md).
 
-## R2 test coupon
+## Test coupon
 
-| Parameter | Value |
-|---|---:|
-| Hex count | **1** |
-| Main coupon bbox | **38.00 × 67.044 × 32.50 mm** |
-| Height | **32.5 mm** |
-| AF | **33.0 mm** |
-| Rear wall | **2.5 mm** |
-| Chevron | **1 through-chevron** |
-| Side mate | included, unchanged from R1 |
-| Assembled overlap volume | **0.00116 mm³** (numerical tolerance) |
+- Connector Z length on coupon: **32.5 mm**
+- Same connector cross-section as the full model
+- Chevron coupon includes a matching side-mate STL in the handed-off final files
+
+## Recorded slicer result
+
+Using the shared comparison settings (**5% Gyroid**, **4 perimeters**, same print layout):
+
+- Weight: **229 g**
+- Filament: **76.83 m**
+- Print time: **16:13**
+
+Although R2 has lower CAD volume than R1, it used more filament and more print time in the recorded slice because the chevrons introduce more internal perimeter/surface.
+
+See [../docs/SPECIFICATIONS.md](../docs/SPECIFICATIONS.md).
