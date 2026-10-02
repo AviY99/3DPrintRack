@@ -29,7 +29,7 @@ jobs:
       - name: Install CAD and validation dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install cadquery trimesh matplotlib numpy
+          python -m pip install cadquery trimesh matplotlib numpy networkx
 
       - name: Build STL, coupon STEP, drawings and validation
         env:
