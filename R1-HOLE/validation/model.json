@@ -1,6 +1,6 @@
 {
   "file": "V17T3_LITE_FINAL_R1_HOLE.stl",
-  "watertight": false,
+  "watertight": true,
   "bounds_mm": [
     [
       0.0,
@@ -18,8 +18,8 @@
     162.38937377929688,
     65.0
   ],
-  "volume_mm3": 239046.51149287177,
-  "surface_area_mm2": 148681.13079131642,
+  "volume_mm3": 239046.511492872,
+  "surface_area_mm2": 148681.1307913164,
   "af_mm": 33.0,
   "hex_wall_mm": 2.5,
   "rear_wall_mm": 2.5,

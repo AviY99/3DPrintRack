@@ -1,6 +1,6 @@
 {
   "file": "V17T3_LITE_FINAL_R2_CHEVRON.stl",
-  "watertight": false,
+  "watertight": true,
   "bounds_mm": [
     [
       0.0,
@@ -18,7 +18,7 @@
     162.38937377929688,
     65.0
   ],
-  "volume_mm3": 228241.56981283755,
+  "volume_mm3": 228241.5698128375,
   "surface_area_mm2": 155235.4100075595,
   "af_mm": 33.0,
   "hex_wall_mm": 2.5,
