@@ -1,0 +1,38 @@
+{
+  "file": "V17T3_LITE_FINAL_R1_HOLE.stl",
+  "watertight": false,
+  "bounds_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      184.62435913085938,
+      162.38937377929688,
+      65.0
+    ]
+  ],
+  "extents_mm": [
+    184.62435913085938,
+    162.38937377929688,
+    65.0
+  ],
+  "volume_mm3": 239046.51149287177,
+  "surface_area_mm2": 148681.13079131642,
+  "af_mm": 33.0,
+  "hex_wall_mm": 2.5,
+  "rear_wall_mm": 2.5,
+  "height_mm": 65.0,
+  "connector": {
+    "male_neck_mm": 5.2,
+    "male_head_mm": 8.2,
+    "male_depth_mm": 2.5,
+    "female_mouth_mm": 5.7,
+    "female_inner_mm": 8.7,
+    "female_depth_mm": 2.7,
+    "side_clearance_per_side_mm": 0.25,
+    "depth_clearance_mm": 0.2
+  },
+  "corner_feature": "3 x \u00d88.2 mm through-hole"
+}

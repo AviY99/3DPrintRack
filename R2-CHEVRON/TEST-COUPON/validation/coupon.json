@@ -1,0 +1,26 @@
+{
+  "file": "V17T3_LITE_FINAL_R2_TEST_CHEVRON.stl",
+  "watertight": false,
+  "bounds_mm": [
+    [
+      73.31217956542969,
+      95.34495544433594,
+      0.0
+    ],
+    [
+      111.31217956542969,
+      162.38937377929688,
+      32.5
+    ]
+  ],
+  "extents_mm": [
+    38.0,
+    67.04441833496094,
+    32.5
+  ],
+  "volume_mm3": 23673.789631035906,
+  "surface_area_mm2": 15254.309886008841,
+  "height_mm": 32.5,
+  "af_mm": 33.0,
+  "corner_feature": "through-chevron"
+}

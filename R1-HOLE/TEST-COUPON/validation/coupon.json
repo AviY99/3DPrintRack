@@ -1,0 +1,26 @@
+{
+  "file": "V17T3_LITE_FINAL_R1_TEST_HOLE.stl",
+  "watertight": true,
+  "bounds_mm": [
+    [
+      73.31217956542969,
+      95.34495544433594,
+      0.0
+    ],
+    [
+      111.31217956542969,
+      162.38937377929688,
+      32.5
+    ]
+  ],
+  "extents_mm": [
+    38.0,
+    67.04441833496094,
+    32.5
+  ],
+  "volume_mm3": 25474.61414207284,
+  "surface_area_mm2": 14217.340062401954,
+  "height_mm": 32.5,
+  "af_mm": 33.0,
+  "corner_feature": "\u00d88.2 through-hole"
+}
