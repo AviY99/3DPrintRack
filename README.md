@@ -31,6 +31,17 @@ Design-oriented alternative.
 - CAD volume: **~228.24157 cm³**
 - Same outer envelope and connector geometry as R1
 
+## ZIP packages
+
+Repository-built package archives are available here:
+
+- [R1-HOLE full package](R1-HOLE/packages/rack_V17T3_LITE_FINAL_R1_connectorfix_package.zip)
+- [R1-HOLE test coupon package](R1-HOLE/TEST-COUPON/packages/rack_V17T3_LITE_FINAL_R1_TEST_singlehex_topcorner_connectorfix_package.zip)
+- [R2-CHEVRON full package](R2-CHEVRON/packages/rack_V17T3_LITE_FINAL_R2_CHEVRON_package.zip)
+- [R2-CHEVRON test coupon package](R2-CHEVRON/TEST-COUPON/packages/rack_V17T3_LITE_FINAL_R2_TEST_CHEVRON_package.zip)
+
+The repository packages are generated from the frozen validated assets. Historical package hashes are recorded in [validation/README.md](validation/README.md).
+
 ## Connector
 
 Both variants use the same physically validated and locked **V16.8 re-entrant locking connector**.
