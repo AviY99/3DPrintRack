@@ -1,0 +1,34 @@
+name: Build package archives
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'package_archives.py'
+      - '.github/workflows/package-archives.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ZIP packages from frozen final assets
+        run: python package_archives.py
+
+      - name: Commit ZIP packages
+        run: |
+          git config user.name "3DPrintRack package builder"
+          git config user.email "actions@users.noreply.github.com"
+          git add R1-HOLE/packages R1-HOLE/TEST-COUPON/packages R2-CHEVRON/packages R2-CHEVRON/TEST-COUPON/packages
+          if git diff --cached --quiet; then
+            echo "No package changes."
+            exit 0
+          fi
+          git commit -m "Build final ZIP package archives"
+          git push
