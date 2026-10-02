@@ -1,69 +1,97 @@
 # 3DPrintRack
 
-Modular 3D-printed triangular rack for hobby paint bottles.
+Modular 3D-printed rack with two frozen final variants.
 
-This repository contains two frozen final variants built from the same validated V17T.3-Lite geometry:
+## Final variants
 
-- **R1-HOLE** — functional version with three Ø8.2 mm through-holes at the triangle corners. The holes also provide an optional wall-mounting point.
-- **R2-CHEVRON** — design-oriented version that replaces the three corner holes with symmetric through-chevron openings.
+### R1-HOLE
+Functional preferred version.
 
-Both variants keep the same 10-cell 4-3-2-1 layout, AF33 bottle cells, 2.5 mm hex walls, 65 mm print depth/height, 2.5 mm rear wall, and the same production-proven V16.8 male/female connector geometry.
+- 10 cells in a 4-3-2-1 layout
+- Internal hex AF: **33 mm**
+- Overall Z height/depth: **65 mm**
+- Hex wall: **2.5 mm**
+- Rear wall: **2.5 mm**
+- Three **Ø8.2 mm** through-holes
+- Approx. envelope: **184.624359 × 162.389374 × 65 mm**
+- CAD volume: **~239.0465 cm³**
+- Holes may also be used as wall-mounting points
+
+### R2-CHEVRON
+Design-oriented alternative.
+
+- Same base geometry as R1
+- Replaces the three Ø8.2 mm holes with three through-chevron openings
+- Chevron width: **19.36 mm**
+- Chevron height: **~16.77 mm**
+- Inner V depth: **~5.59 mm**
+- Outer angles: **60°**
+- Inner angles: **30°**
+- Minimum material thickness in the area: **~3.0 mm**
+- CAD volume: **~228.24157 cm³**
+- Same outer envelope and connector geometry as R1
+
+## Connector
+
+Both variants use the same physically validated and locked **V16.8 re-entrant locking connector**.
+
+See [CONNECTOR_SPEC.md](CONNECTOR_SPEC.md).
+
+## Slicer comparison
+
+Both variants were sliced with the same main settings: **5% Gyroid** and **4 perimeters**.
+
+| Metric | R1-HOLE | R2-CHEVRON |
+|---|---:|---:|
+| CAD volume | 239.05 cm³ | 228.24 cm³ |
+| Slicer weight | 221 g | 229 g |
+| Filament length | 74.15 m | 76.83 m |
+| Print time | 15:59 | 16:13 |
+
+Despite its lower CAD volume, R2 uses more filament and slightly more print time because the chevrons add internal perimeter and surface area. See [docs/SPECIFICATIONS.md](docs/SPECIFICATIONS.md) and [docs/PRINTING_NOTES.md](docs/PRINTING_NOTES.md).
 
 ## Repository layout
 
 ```text
-R1-HOLE/
-├── STL/
-├── STEP-Onshape/
-├── TEST-COUPON/
-│   ├── STL/
-│   ├── STEP/
-│   └── drawings/
-├── drawings/
-├── validation/
+3DPrintRack/
 ├── README.md
-└── SPECIFICATIONS.md
-
-R2-CHEVRON/
-├── STL/
-├── STEP-Onshape/
-├── TEST-COUPON/
-│   ├── STL/
-│   ├── STEP/
-│   └── drawings/
-├── drawings/
-├── validation/
-├── README.md
-└── SPECIFICATIONS.md
-
-docs/
+├── CHANGELOG.md
 ├── CONNECTOR_SPEC.md
-└── PRINTING_NOTES.md
-
-CHANGELOG.md
+├── docs/
+│   ├── SPECIFICATIONS.md
+│   ├── CONNECTOR_SPEC.md
+│   └── PRINTING_NOTES.md
+├── R1-HOLE/
+│   ├── README.md
+│   ├── SPECIFICATIONS.md
+│   ├── STL/
+│   ├── STEP-Onshape/
+│   ├── TEST-COUPON/
+│   │   ├── README.md
+│   │   ├── STL/
+│   │   ├── STEP/
+│   │   └── previews/
+│   └── drawings/
+├── R2-CHEVRON/
+│   ├── README.md
+│   ├── SPECIFICATIONS.md
+│   ├── STL/
+│   ├── STEP-Onshape/
+│   ├── TEST-COUPON/
+│   │   ├── README.md
+│   │   ├── STL/
+│   │   ├── STEP/
+│   │   └── previews/
+│   └── drawings/
+└── validation/
 ```
 
-## Connector status
+Additional validation/drawing folders already present in the repository are retained.
 
-The connector cross-section is locked and physically validated:
+## STEP / Onshape
 
-- Male neck/head: **5.2 / 8.2 mm**
-- Male depth: **2.5 mm**
-- Female mouth/inner: **5.7 / 8.7 mm**
-- Female depth: **2.7 mm**
-- Nominal lateral clearance: **0.25 mm per side**
-- Depth clearance: **0.20 mm**
-
-See `docs/CONNECTOR_SPEC.md` for the full specification and validation notes.
-
-## Important slicer finding
-
-R2-CHEVRON has lower CAD volume than R1-HOLE, but in the user's same EasyPrint slice it used **more filament and slightly more time** because the chevron creates substantially more perimeter/surface area. This result is documented in `docs/PRINTING_NOTES.md`.
-
-## CAD / Onshape
-
-The `STEP-Onshape/` folders contain STEP solids intended for import into Onshape. These are not native cloud Onshape documents.
+Files in `STEP-Onshape/` and coupon `STEP/` folders are STEP files intended for import into Onshape. They are not native local Onshape documents.
 
 ## Status
 
-Both **R1-HOLE** and **R2-CHEVRON** are frozen final configurations. Changes should be made as new revisions rather than overwriting these versions.
+R1-HOLE and R2-CHEVRON are parallel frozen final variants. The connector geometry is locked; do not alter it without an explicit new revision and validation.
