@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'build_assets.py'
+      - '.github/workflows/build-final-assets.yml'
       - 'R1-HOLE/STEP-Onshape/**'
       - 'R2-CHEVRON/STEP-Onshape/**'
       - 'R2-CHEVRON/TEST-COUPON/STEP/V17T3_LITE_FINAL_R2_TEST_CHEVRON.step'
