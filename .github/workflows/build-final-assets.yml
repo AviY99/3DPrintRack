@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'build_assets.py'
+      - 'mesh_cleanup.py'
       - '.github/workflows/build-final-assets.yml'
       - 'R1-HOLE/STEP-Onshape/**'
       - 'R2-CHEVRON/STEP-Onshape/**'
@@ -34,7 +35,9 @@ jobs:
       - name: Build STL, coupon STEP, drawings and validation
         env:
           MPLBACKEND: Agg
-        run: python build_assets.py
+        run: |
+          python build_assets.py
+          python mesh_cleanup.py
 
       - name: Commit generated final assets
         run: |
