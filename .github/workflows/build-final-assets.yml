@@ -1,0 +1,48 @@
+name: Build final CAD and print assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'build_assets.py'
+      - 'R1-HOLE/STEP-Onshape/**'
+      - 'R2-CHEVRON/STEP-Onshape/**'
+      - 'R2-CHEVRON/TEST-COUPON/STEP/V17T3_LITE_FINAL_R2_TEST_CHEVRON.step'
+
+permissions:
+  contents: write
+
+jobs:
+  build-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install CAD and validation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install cadquery trimesh matplotlib numpy
+
+      - name: Build STL, coupon STEP, drawings and validation
+        env:
+          MPLBACKEND: Agg
+        run: python build_assets.py
+
+      - name: Commit generated final assets
+        run: |
+          git config user.name "3DPrintRack asset builder"
+          git config user.email "actions@users.noreply.github.com"
+          git add R1-HOLE R2-CHEVRON
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+            exit 0
+          fi
+          git commit -m "Build final STL, coupon STEP, drawings and validation assets"
+          git push
